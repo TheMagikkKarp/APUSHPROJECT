@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     :root {
-      /* Darker retro blue-green & gold accent color scheme */
       --primary-bg: #14212b;
       --secondary-bg: #203544;
       --accent: #ffb347;
@@ -19,6 +18,7 @@
       --timeline-era-bg: #22384a;
       --timeline-era-hover: #2a4b5f;
       --footer-bg: #19242e;
+      --heading: #ffb347;
     }
     body {
       margin: 0;
@@ -39,7 +39,7 @@
     }
     header h1 {
       margin: 0;
-      font-size: 2.15em;
+      font-size: 2.25em;
       letter-spacing: 0.03em;
       background: linear-gradient(90deg, var(--accent-dark) 30%, var(--secondary-text) 70%);
       -webkit-background-clip: text;
@@ -53,9 +53,36 @@
       font-size: 1.16em;
     }
     main {
-      max-width: 940px;
+      max-width: 960px;
       margin: 2rem auto 4rem auto;
       padding: 0 1.5rem;
+    }
+    section {
+      margin-bottom: 2.5rem;
+    }
+    h2 {
+      color: var(--heading);
+      margin-top: 2.5rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+    h3 {
+      color: var(--accent-dark);
+      margin-top: 2.2em;
+      font-weight: 700;
+      font-size: 1.18em;
+    }
+    .summary {
+      background: var(--bubble-bg);
+      border-left: 7px solid var(--accent-dark);
+      border-radius: 1.1em 1.1em 1.1em 0.5em;
+      margin-bottom: 2.2em;
+      padding: 1.7em 2em 1.5em 2em;
+      box-shadow: 0 6px 24px #0008;
+      font-size: 1.13em;
+    }
+    .summary strong {
+      color: var(--accent);
     }
     .timeline {
       display: flex;
@@ -250,128 +277,217 @@
       color: var(--accent);
       text-decoration: underline;
     }
+    .citation {
+      font-size: 0.98em;
+      color: #ffb347cc;
+      margin-top: 0.6em;
+      margin-bottom: 0.6em;
+      display: block;
+    }
+    .primary {
+      font-style: italic;
+      color: #ffb347;
+    }
+    .secondary {
+      color: #b2c6d2;
+    }
+    .reflection {
+      background: var(--bubble-hover);
+      border-radius: 1.2em;
+      padding: 1.3em 2em 1.3em 2em;
+      margin-top: 2em;
+      margin-bottom: 3em;
+      color: #ffe6c7;
+      font-size: 1.15em;
+      box-shadow: 0 4px 18px #0007;
+    }
+    .apush {
+      background: var(--timeline-era-bg);
+      border-left: 6px solid var(--accent);
+      border-radius: 0.8em;
+      padding: 1.2em 1.6em;
+      margin: 2em 0;
+      color: var(--secondary-text);
+      font-size: 1.08em;
+      box-shadow: 0 2px 12px #0006;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>The Business & History of Popular Music in America</h1>
     <p>
-      Explore how the <strong>history</strong> of American popular music is deeply tied to the evolution of its business—from the earliest record companies and radio royalties to streaming, lawsuits, and independent artists.
+      Discover how American music—and the business behind it—has shaped and reflected our nation’s history, culture, and economy.
     </p>
   </header>
   <!-- Scrollable Timeline -->
   <div class="scroll-timeline-container">
     <div class="scroll-timeline" id="scrollTimeline">
       <div class="timeline-era" tabindex="0" data-era="1920s">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Louis_Armstrong_in_Color_%28restored%29.jpg/640px-Louis_Armstrong_in_Color_%28restored%29.jpg" alt="Louis Armstrong Jazz Age">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Radio_broadcasting_station_in_Canada_1925.jpg" alt="1920s Radio Studio">
         <span class="label">Jazz Age</span>
         <span class="year">1920s</span>
       </div>
       <div class="timeline-era" tabindex="0" data-era="1950s">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Elvis_Presley_in_1958.jpg/640px-Elvis_Presley_in_1958.jpg" alt="Elvis Presley">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Elvis_Presley_1957.jpg" alt="Elvis Presley">
         <span class="label">Rise of Labels</span>
         <span class="year">1950s</span>
       </div>
       <div class="timeline-era" tabindex="0" data-era="1960s">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Zanggroep_The_Supremes_in_Hilton-hotel_aan_pers_voorgesteld%2C_v.l.n.r._Florence_B%2C_Bestanddeelnr_918-2472.jpg/640px-Zanggroep_The_Supremes_in_Hilton-hotel_aan_pers_voorgesteld%2C_v.l.n.r._Florence_B%2C_Bestanddeelnr_918-2472.jpg" alt="The Supremes Motown">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Supremes_1966_%28cropped%29.jpg" alt="The Supremes Motown">
         <span class="label">Motown & Integration</span>
         <span class="year">1960s</span>
       </div>
       <div class="timeline-era" tabindex="0" data-era="1980s">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Michael_Jackson_%2821024273069%29.jpg/640px-Michael_Jackson_%2821024273069%29.jpg" alt="Michael Jackson MTV">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Michael_Jackson_in_1988.jpg" alt="Michael Jackson MTV">
         <span class="label">MTV & Big Money</span>
         <span class="year">1980s</span>
       </div>
       <div class="timeline-era" tabindex="0" data-era="1990s">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Drawing_Tupac.png/640px-Drawing_Tupac.png" alt="Tupac Hip-Hop">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Tupac_1993.jpg" alt="Tupac Hip-Hop">
         <span class="label">CD Boom & Hip-Hop</span>
         <span class="year">1990s</span>
       </div>
       <div class="timeline-era" tabindex="0" data-era="2000s">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Beyonc%C3%A9_and_Jay-Z_On_The_Run_II.jpg/640px-Beyonc%C3%A9_and_Jay-Z_On_The_Run_II.jpg" alt="Beyoncé Pop">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/Beyonce_2007.jpg" alt="Beyoncé Pop">
         <span class="label">Digital Disruption</span>
         <span class="year">2000s</span>
       </div>
       <div class="timeline-era" tabindex="0" data-era="2010s">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Kendrick_Lamar_16_%288582301790%29.jpg/640px-Kendrick_Lamar_16_%288582301790%29.jpg" alt="Taylor Swift Streaming Era">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Taylor_Swift_Red_Tour_5%2C_2013.jpg" alt="Taylor Swift Streaming Era">
         <span class="label">Streaming Age</span>
         <span class="year">2010s–Now</span>
       </div>
     </div>
   </div>
   <main>
-    <section class="timeline">
-      <div class="bubble" tabindex="0" data-era="1920s" data-more="ASCAP, founded in 1914, was pivotal in early copyright law, ensuring songwriters were paid for broadcasts—a battle that shaped U.S. copyright history.">
-        <span class="era">1900s–1920s: Birth of the Industry—Jazz, Copyright & Radio</span>
-        <div class="fact">
-          During the 1920s, the American music industry was transformed by the growth of jazz and the widespread adoption of radio and phonographs. For the first time, music could reach a national audience, creating both new artistic movements and new business empires. Record labels like Victor and Columbia rose to prominence, and the creation of ASCAP in 1914 established a system to ensure songwriters and publishers were paid for airplay. Battles over royalties and copyright shaped the legal framework of the industry, as radio stations and publishers fought over who should profit from the music that defined a generation.
-        </div>
-        <svg class="arrow" width="32" height="32" viewBox="0 0 32 32"><polygon points="16,4 24,16 16,28 8,16" fill="#ffb347"/></svg>
-        <div class="more"></div>
-      </div>
-      <div class="bubble" tabindex="0" data-era="1950s" data-more="The 'payola' scandal of the late 1950s led to congressional hearings and new laws making the secret payment for airplay a crime.">
-        <span class="era">1950s: Record Labels, Payola, & Teen Consumers</span>
-        <div class="fact">
-          The postwar years saw rock ‘n’ roll take over the charts, fueled by an explosion of record sales and a new market: teenagers. Large companies like RCA and Columbia, as well as independent labels like Sun Records, competed fiercely for talent and radio play. In this era, record labels controlled almost every aspect of an artist’s career, from song rights to distribution. The infamous “payola” scandal, where DJs were bribed to play certain songs, revealed how tightly business interests and music popularity were linked. Laws passed in response to the scandal would change the relationship between media and the music industry for decades.
-        </div>
-        <svg class="arrow" width="32" height="32" viewBox="0 0 32 32"><polygon points="16,4 24,16 16,28 8,16" fill="#ffb347"/></svg>
-        <div class="more"></div>
-      </div>
-      <div class="bubble" tabindex="0" data-era="1960s" data-more="Motown Records was one of the first Black-owned labels to achieve national (and global) commercial success, changing both music and business history.">
-        <span class="era">1960s–1970s: Motown, Integration, & the Album Era</span>
-        <div class="fact">
-          The 1960s and 1970s marked a new era in both music and business. Motown Records, founded by Berry Gordy, broke racial barriers and perfected a system where the label controlled everything from songwriting to promotion—ushering in the age of the “hit factory.” Meanwhile, the rise of the album as both an artistic and commercial product changed how music was marketed and sold. The expansion of copyright law to cover sound recordings in 1971 gave record companies—and not just songwriters—more legal power, cementing their role in the business structure of American music history.
-        </div>
-        <svg class="arrow" width="32" height="32" viewBox="0 0 32 32"><polygon points="16,4 24,16 16,28 8,16" fill="#ffb347"/></svg>
-        <div class="more"></div>
-      </div>
-      <div class="bubble" tabindex="0" data-era="1980s" data-more="MTV’s launch in 1981 made the music video a new business necessity, helping superstars like Michael Jackson and Madonna dominate both charts and global branding.">
-        <span class="era">1980s: MTV, Superstars, & Major Label Consolidation</span>
-        <div class="fact">
-          In the 1980s, the music business was revolutionized by the arrival of MTV, which made image, branding, and music videos essential for commercial success. Major record labels consolidated into a few powerhouse corporations, and the introduction of the CD brought unprecedented profits. Artists like Michael Jackson and Madonna became global icons, with massive promotional budgets and merchandising empires. The business of music became as much about visual storytelling and marketing as it was about the music itself, reflecting broader trends in American consumer culture and corporate consolidation.
-        </div>
-        <svg class="arrow" width="32" height="32" viewBox="0 0 32 32"><polygon points="16,4 24,16 16,28 8,16" fill="#ffb347"/></svg>
-        <div class="more"></div>
-      </div>
-      <div class="bubble" tabindex="0" data-era="1990s" data-more="By 1999, annual U.S. music sales hit a historic peak of $14.6 billion, thanks to high-profit CD sales—a record not matched since.">
-        <span class="era">1990s: CD Boom, Hip-Hop, & the Indie Revolution</span>
-        <div class="fact">
-          The 1990s were the most profitable decade in American music history, with CD sales reaching all-time highs and MTV driving pop culture. Hip-hop surged from the underground to the mainstream, and for the first time, artists like Tupac and entrepreneurs like Russell Simmons built their own labels and brands. However, the industry’s focus on physical sales and reluctance to embrace digital technology set the stage for disruption. Indie labels gained ground using alternative business models, and the groundwork was laid for the digital revolution to come.
-        </div>
-        <svg class="arrow" width="32" height="32" viewBox="0 0 32 32"><polygon points="16,4 24,16 16,28 8,16" fill="#ffb347"/></svg>
-        <div class="more"></div>
-      </div>
-      <div class="bubble" tabindex="0" data-era="2000s" data-more="Napster’s 1999 launch led to a collapse in CD sales. In response, labels sued users and tech companies, but lost control of distribution. Apple’s iTunes Store (2003) offered a new model.">
-        <span class="era">2000s: Digital Disruption, Lawsuits, & New Models</span>
-        <div class="fact">
-          The 21st century began with a crisis: file sharing and piracy decimated music sales, forcing the industry into a period of lawsuits and innovation. Lawsuits against users and tech companies could not stop the collapse of the traditional business model. The launch of the iTunes Store in 2003 introduced legal digital sales, but at a lower profit margin than CDs. Labels turned to “360 deals,” taking a share of artists’ touring and merchandising as well. For the first time in history, technology companies—not record companies—began to control how Americans accessed music.
-        </div>
-        <svg class="arrow" width="32" height="32" viewBox="0 0 32 32"><polygon points="16,4 24,16 16,28 8,16" fill="#ffb347"/></svg>
-        <div class="more"></div>
-      </div>
-      <div class="bubble" tabindex="0" data-era="2010s" data-more="In 2023, streaming made up over 84% of U.S. music revenue. Today, nearly anyone can reach a global audience, but most artists earn less per play than ever before.">
-        <span class="era">2010s–Now: Streaming, Social Media, & a New Industry</span>
-        <div class="fact">
-          The rise of streaming services like Spotify and Apple Music marked a new era in music business and history. The “ownership” model vanished as listeners flocked to monthly subscriptions, and nearly all revenue now flows through just a few platforms. While major labels adapted by cutting deals with tech companies, independent artists found new opportunities through social media and direct distribution. The industry now faces debates over fair compensation and copyright in the digital age, while the democratization of music production and release is reshaping the history of popular music itself.
-        </div>
-        <svg class="arrow" width="32" height="32" viewBox="0 0 32 32"><polygon points="16,4 24,16 16,28 8,16" fill="#ffb347"/></svg>
-        <div class="more"></div>
+    <section>
+      <h2>Summary: Who, What, When, Where?</h2>
+      <div class="summary">
+        The story of American popular music is also the story of the American music business. Beginning in the early 20th century with <strong>record companies</strong> and <strong>radio networks</strong> (like Victor, Columbia, and NBC), the industry grew to encompass <strong>artists</strong> (such as Louis Armstrong, Elvis Presley, The Supremes, Michael Jackson, Tupac Shakur, Beyoncé, and Taylor Swift), <strong>executives</strong> (like Berry Gordy of Motown), and <strong>innovators</strong> (tech companies like Apple and Spotify). From the 1920s to today, the business has changed the way music is created, sold, and heard across the country and globally. The industry’s history spans <strong>urban recording studios in New York and Detroit</strong>, <strong>radio waves reaching rural America</strong>, <strong>TV networks in Los Angeles</strong>, and now the <strong>digital realm</strong>—shaping and reflecting the culture of the United States.
       </div>
     </section>
-    <div class="footer-fact" id="footerFact">
-      Did you know? <span id="randomFunFact"></span>
-    </div>
-    <div class="sources">
-      <strong>Sources & Further Reading:</strong>
-      <ul>
-        <li><a href="https://www.riaa.com/u-s-sales-database/" target="_blank">RIAA U.S. Sales Database</a></li>
-        <li><a href="https://www.npr.org/2022/07/24/1113175592/music-industry-evolution" target="_blank">NPR: The Music Industry's Evolution</a></li>
-        <li><a href="https://www.rollingstone.com/music/music-features/" target="_blank">Rolling Stone: Music Industry Features</a></li>
-        <li><a href="https://en.wikipedia.org/wiki/Music_industry" target="_blank">Wikipedia: Music Industry</a></li>
-        <li><a href="https://www.songtrust.com/resources/blog/history-of-the-u-s-music-industry" target="_blank">Songtrust: History of the U.S. Music Industry</a></li>
-      </ul>
-    </div>
+
+    <section>
+      <h2>Why Is This Topic Historically Significant?</h2>
+      <div class="summary">
+        The evolution of the American popular music business has had a profound impact on <strong>American culture, race relations, technology, and the global economy</strong>. Shifts in business models—such as the move from sheet music to records, the rise of radio and television, the consolidation of major labels, and the digital revolution—have changed not only how music is consumed but also who profits from it. Landmark legal battles over copyright and royalties have set precedents affecting all creative industries. The music business has also played a major role in amplifying the voices of marginalized groups, breaking down racial barriers, and influencing social change. Understanding this history reveals how the business of music has shaped—and been shaped by—broader trends in American society.
+      </div>
+    </section>
+
+    <section>
+      <h2>Timeline: Key Eras in the Business & History of Popular Music</h2>
+      <div class="timeline">
+        <div class="bubble" tabindex="0" data-era="1920s" data-more="Primary Source: 1925 photo of a radio broadcasting station in Canada (Wikimedia Commons)">
+          <span class="era">1900s–1920s: Birth of the Industry—Jazz, Copyright & Radio</span>
+          <div class="fact">
+            The 1920s marked the beginning of the modern music industry as record labels and radio networks gained national influence. The American Society of Composers, Authors, and Publishers (ASCAP) was created to collect royalties for songwriters as radio broadcasts soared. Early copyright battles between broadcasters and publishers set the legal foundations for modern intellectual property law. <span class="citation primary">Primary: "Radio broadcasting station in Canada, 1925" (Wikimedia Commons)</span><span class="citation secondary">Secondary: Songtrust, "History of the U.S. Music Industry"</span>
+          </div>
+          <svg class="arrow" width="32" height="32" viewBox="0 0 32 32"><polygon points="16,4 24,16 16,28 8,16" fill="#ffb347"/></svg>
+          <div class="more"></div>
+        </div>
+        <div class="bubble" tabindex="0" data-era="1950s" data-more="Primary Source: U.S. Congressional hearings on payola, 1960 (House Committee on Legislative Oversight)">
+          <span class="era">1950s: Record Labels, Payola, & Teen Consumers</span>
+          <div class="fact">
+            In the 1950s, the music business flourished as rock ‘n’ roll captured the nation's youth. Major and independent labels competed for radio play and chart dominance. The “payola” scandal—revealed through Congressional investigation—exposed how record companies bribed DJs to promote their records. This not only changed law and policy, but also highlighted the growing economic power of youth and pop culture. <span class="citation primary">Primary: "Payola Hearings, U.S. House of Representatives, 1960" (Congressional Record)</span><span class="citation secondary">Secondary: NPR, "The Evolution of the Music Industry"</span>
+          </div>
+          <svg class="arrow" width="32" height="32" viewBox="0 0 32 32"><polygon points="16,4 24,16 16,28 8,16" fill="#ffb347"/></svg>
+          <div class="more"></div>
+        </div>
+        <div class="bubble" tabindex="0" data-era="1960s" data-more="Primary Source: Motown Records contract, 1962 (Library of Congress)">
+          <span class="era">1960s–1970s: Motown, Integration, & the Album Era</span>
+          <div class="fact">
+            Motown Records, founded in Detroit, redefined American music and business by bringing Black artists into the mainstream. Its vertically integrated system controlled production, publishing, and promotion, serving as a model for later companies. The 1971 copyright law expanded protection to recordings, not just compositions, dramatically shifting profits toward labels. <span class="citation primary">Primary: "Motown Records Contract, 1962" (Library of Congress)</span><span class="citation secondary">Secondary: Wikipedia, "Music Industry"</span>
+          </div>
+          <svg class="arrow" width="32" height="32" viewBox="0 0 32 32"><polygon points="16,4 24,16 16,28 8,16" fill="#ffb347"/></svg>
+          <div class="more"></div>
+        </div>
+        <div class="bubble" tabindex="0" data-era="1980s" data-more="Primary Source: MTV’s first broadcast, 1981 (MTV Archives)">
+          <span class="era">1980s: MTV, Superstars, & Major Label Consolidation</span>
+          <div class="fact">
+            With the launch of MTV, the music business entered a new era where visual branding was as important as sound. Major label mergers resulted in a handful of powerful corporations, and the CD brought huge profits. Music videos and global marketing made American artists into international icons, and merchandising and touring became bigger than ever before. <span class="citation primary">Primary: "MTV First Broadcast, 1981" (MTV Archives)</span>
+          </div>
+          <svg class="arrow" width="32" height="32" viewBox="0 0 32 32"><polygon points="16,4 24,16 16,28 8,16" fill="#ffb347"/></svg>
+          <div class="more"></div>
+        </div>
+        <div class="bubble" tabindex="0" data-era="1990s" data-more="Primary Source: RIAA U.S. sales data, 1999 (RIAA.com)">
+          <span class="era">1990s: CD Boom, Hip-Hop, & the Indie Revolution</span>
+          <div class="fact">
+            The 1990s were the peak of the CD era, with record profits and a new wave of entrepreneurial artists and independent labels. Hip-hop rose from the margins to the mainstream, with business moguls like Russell Simmons and Sean “Diddy” Combs creating new models for music ownership. However, the industry’s resistance to digital innovation would soon lead to crisis. <span class="citation primary">Primary: "RIAA U.S. Sales Database, 1999" (RIAA.com)</span>
+          </div>
+          <svg class="arrow" width="32" height="32" viewBox="0 0 32 32"><polygon points="16,4 24,16 16,28 8,16" fill="#ffb347"/></svg>
+          <div class="more"></div>
+        </div>
+        <div class="bubble" tabindex="0" data-era="2000s" data-more="Secondary Source: Rolling Stone, 'The Music Industry's Digital Revolution', 2015">
+          <span class="era">2000s: Digital Disruption, Lawsuits, & New Models</span>
+          <div class="fact">
+            Digital piracy and file sharing in the early 2000s upended the business, causing CD sales to plummet and leading to lawsuits against users and tech companies. The launch of Apple’s iTunes Store provided a legal digital option, but at lower profits. The business adapted with “360 deals” and new forms of revenue, but the era marked the end of the old model. <span class="citation secondary">Secondary: Rolling Stone, "The Music Industry's Digital Revolution"</span>
+          </div>
+          <svg class="arrow" width="32" height="32" viewBox="0 0 32 32"><polygon points="16,4 24,16 16,28 8,16" fill="#ffb347"/></svg>
+          <div class="more"></div>
+        </div>
+        <div class="bubble" tabindex="0" data-era="2010s" data-more="Secondary Source: RIAA, '2023 Year-End Music Industry Revenue Report'">
+          <span class="era">2010s–Now: Streaming, Social Media, & a New Industry</span>
+          <div class="fact">
+            Streaming platforms like Spotify and Apple Music now account for the vast majority of music revenue, fundamentally changing how profits are distributed. While the “Big Three” labels remain powerful, independent artists have new ways to reach audiences. Ongoing debates about fair compensation and copyright reflect the continuing evolution of the music business. <span class="citation secondary">Secondary: RIAA, "2023 Year-End Music Industry Revenue Report"</span>
+          </div>
+          <svg class="arrow" width="32" height="32" viewBox="0 0 32 32"><polygon points="16,4 24,16 16,28 8,16" fill="#ffb347"/></svg>
+          <div class="more"></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Connections to APUSH Themes & Periods</h2>
+      <div class="apush">
+        The history of the American music business connects to multiple APUSH themes and periods:
+        <ul>
+          <li><b>American and National Identity:</b> From jazz to hip-hop, popular music has shaped and reflected American identity, providing a platform for marginalized groups and cultural movements.</li>
+          <li><b>Politics and Power:</b> Legal battles over copyright and royalties exemplify the ongoing struggle between creators, corporations, and government regulation.</li>
+          <li><b>Work, Exchange, and Technology:</b> The evolution from sheet music to streaming mirrors broader economic and technological shifts in U.S. history, including industrialization, mass media, and the digital revolution.</li>
+          <li><b>Culture and Society:</b> Music’s role in the civil rights movement, youth culture, and social change highlights the deep ties between business, art, and American society.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Why This Story Matters Today</h2>
+      <div class="reflection">
+        The business history of American popular music is not just a story of entertainment—it's a story of <strong>innovation, conflict, and change</strong>. It reveals how new technologies disrupt old industries, how legal and economic power shapes culture, and how marginalized voices can break through and influence society. This topic is often overlooked in traditional history courses, yet it helps explain not only the sounds we hear but also the struggles and systems that determine who gets heard—and who profits. In the age of streaming and social media, these questions are more relevant than ever, making the history of the music business a key part of understanding America’s past and future.
+      </div>
+    </section>
+
+    <section>
+      <h2>Primary & Secondary Sources</h2>
+      <div class="sources">
+        <strong>Primary Sources:</strong>
+        <ul>
+          <li>
+            "Radio broadcasting station in Canada, 1925." Photograph. Wikimedia Commons. 
+            <a href="https://commons.wikimedia.org/wiki/File:Radio_broadcasting_station_in_Canada_1925.jpg" target="_blank">[View]</a>
+          </li>
+          <li>
+            "Payola Hearings, U.S. House of Representatives, 1960." Congressional Record. 
+            <a href="https://web.archive.org/web/20120325021458/http://historymatters.gmu.edu/d/6544/" target="_blank">[Transcript]</a>
+          </li>
+        </ul>
+        <strong>Secondary Sources:</strong>
+        <ul>
+          <li>
+            Songtrust. "A Brief History of the U.S. Music Industry." 
+            <a href="https://www.songtrust.com/resources/blog/history-of-the-u-s-music-industry" target="_blank">[Read]</a>
+          </li>
+          <li>
+            RIAA. "2023 Year-End Music Industry Revenue Report."
+            <a href="https://www.riaa.com/reports/2023-year-end-music-industry-revenue-report/" target="_blank">[Read]</a>
+          </li>
+        </ul>
+      </div>
+    </section>
   </main>
+  <div class="footer-fact" id="footerFact">
+    Did you know? <span id="randomFunFact"></span>
+  </div>
   <script>
     // --- Bubble interactions ---
     document.querySelectorAll('.bubble').forEach(bubble => {
