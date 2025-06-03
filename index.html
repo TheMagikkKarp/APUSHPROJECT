@@ -84,6 +84,32 @@
     .summary strong {
       color: var(--accent);
     }
+    .main-image-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 2em 0 2.5em 0;
+      background: var(--bubble-bg);
+      border-radius: 1.1em;
+      box-shadow: 0 4px 18px #0007;
+      padding: 1.2em 1em 1.6em 1em;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .main-image-container img {
+      max-width: 100%;
+      border-radius: 0.7em;
+      box-shadow: 0 2px 16px #000c;
+      margin-bottom: 0.7em;
+      display: block;
+    }
+    .main-image-caption {
+      color: #ffd39b;
+      font-size: 0.98em;
+      text-align: center;
+      margin-top: 0;
+    }
     .timeline {
       display: flex;
       flex-direction: column;
@@ -243,7 +269,6 @@
       .timeline-era { min-width: 80px; max-width: 100px; font-size: 0.77em; }
       .timeline-era img { width: 42px; height: 42px; }
     }
-
     .footer-fact {
       margin: 5rem auto 2rem auto;
       padding: 1.5em 2em 1.5em 2em;
@@ -320,6 +345,14 @@
       Discover how American music—and the business behind it—has shaped and reflected our nation’s history, culture, and economy.
     </p>
   </header>
+  <!-- Main illustrative image -->
+  <div class="main-image-container">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Engineer_Eero_Frantsila_beside_Telefunken_transmission_equipment_in_Lahti_radio_station%2C_1930%27s..jpg/640px-Engineer_Eero_Frantsila_beside_Telefunken_transmission_equipment_in_Lahti_radio_station%2C_1930%27s..jpg" 
+         alt="Engineer Eero Frantsila beside Telefunken transmission equipment in Lahti radio station, 1930s">
+    <div class="main-image-caption">
+      Engineer Eero Frantsila beside Telefunken transmission equipment in Lahti radio station, 1930s. (<a style="color:#ffd39b" href="https://commons.wikimedia.org/wiki/File:Engineer_Eero_Frantsila_beside_Telefunken_transmission_equipment_in_Lahti_radio_station,_1930%27s..jpg" target="_blank">Wikimedia Commons</a>)
+    </div>
+  </div>
   <!-- Scrollable Timeline -->
   <div class="scroll-timeline-container">
     <div class="scroll-timeline" id="scrollTimeline">
@@ -464,11 +497,15 @@
         <ul>
           <li>
             "Radio broadcasting station in Canada, 1925." Photograph. Wikimedia Commons. 
-            <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Engineer_Eero_Frantsila_beside_Telefunken_transmission_equipment_in_Lahti_radio_station%2C_1930%27s..jpg/640px-Engineer_Eero_Frantsila_beside_Telefunken_transmission_equipment_in_Lahti_radio_station%2C_1930%27s..jpg" target="_blank">[View]</a>
+            <a href="https://commons.wikimedia.org/wiki/File:Radio_broadcasting_station_in_Canada_1925.jpg" target="_blank">[View]</a>
           </li>
           <li>
             "Payola Hearings, U.S. House of Representatives, 1960." Congressional Record. 
             <a href="https://web.archive.org/web/20120325021458/http://historymatters.gmu.edu/d/6544/" target="_blank">[Transcript]</a>
+          </li>
+          <li>
+            "Engineer Eero Frantsila beside Telefunken transmission equipment in Lahti radio station, 1930s." Photograph. Wikimedia Commons.
+            <a href="https://commons.wikimedia.org/wiki/File:Engineer_Eero_Frantsila_beside_Telefunken_transmission_equipment_in_Lahti_radio_station,_1930%27s..jpg" target="_blank">[View]</a>
           </li>
         </ul>
         <strong>Secondary Sources:</strong>
