@@ -19,6 +19,8 @@
       --timeline-era-hover: #2a4b5f;
       --footer-bg: #19242e;
       --heading: #ffb347;
+      --scrollbar-thumb: #ffb347cc;
+      --scrollbar-track: #23364e;
     }
     body {
       margin: 0;
@@ -201,13 +203,23 @@
       right: 50%;
       transform: translateX(-50%);
       padding-bottom: 1.5rem;
-      /* Hide scroll bar for all browsers */
-      overflow-x: hidden;
-      -ms-overflow-style: none;  /* Internet Explorer 10+ */
-      scrollbar-width: none;  /* Firefox */
+      overflow-x: auto;
+      -ms-overflow-style: auto;
+      scrollbar-width: thin;
+      scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+      background: var(--timeline-bg);
+      border-radius: 1.1em;
+      box-shadow: 0 2px 18px #0004;
     }
-    .scroll-timeline-container::-webkit-scrollbar { display: none; }
-
+    .scroll-timeline-container::-webkit-scrollbar {
+      height: 12px;
+      border-radius: 6px;
+      background: var(--scrollbar-track);
+    }
+    .scroll-timeline-container::-webkit-scrollbar-thumb {
+      background: var(--scrollbar-thumb);
+      border-radius: 6px;
+    }
     .scroll-timeline {
       display: flex;
       flex-direction: row;
@@ -216,12 +228,10 @@
       padding: 2rem 4vw;
       min-width: 800px;
       width: max-content;
-      background: var(--timeline-bg);
+      background: transparent;
       border-radius: 1.1em;
-      box-shadow: 0 2px 18px #0004;
       cursor: grab;
       user-select: none;
-      /* Prevent text selection while dragging */
       -webkit-user-select: none;
       -ms-user-select: none;
     }
@@ -351,6 +361,39 @@
       color: var(--secondary-text);
       font-size: 1.08em;
       box-shadow: 0 2px 12px #0006;
+    }
+
+    .case-link-bubble {
+      background: var(--bubble-bg);
+      border-left: 7px solid var(--accent-dark);
+      border-radius: 1.1em 1.1em 1.1em 0.5em;
+      margin-bottom: 2.2em;
+      padding: 1.7em 2em 1.5em 2em;
+      box-shadow: 0 6px 24px #0008;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: 700px;
+    }
+    .case-link-bubble a {
+      background: var(--accent-dark);
+      color: #14212b;
+      font-weight: bold;
+      border-radius: 0.7em;
+      padding: 0.7em 1.4em;
+      margin-top: 1em;
+      font-size: 1.08em;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+      box-shadow: 0 4px 12px #0007;
+      letter-spacing: 0.01em;
+      display: inline-block;
+    }
+    .case-link-bubble a:hover, .case-link-bubble a:focus {
+      background: #fff2e0;
+      color: var(--accent-dark);
+      box-shadow: 0 8px 24px #ffb34755;
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -488,51 +531,15 @@
 
     <section>
       <h2>Landmark Primary Source: Grand Upright Music v. Warner Bros. (1991)</h2>
-      <div class="bubble" tabindex="0" id="expandable-bizmarkie">
-        <span class="era">Grand Upright Music, Ltd. v. Warner Bros. Records Inc. (1991)</span>
-        <div class="fact">
-          <em>Click to expand and read a key excerpt from the court's opinion in the famous Biz Markie copyright case:</em>
+      <div class="case-link-bubble">
+        <div>
+          <strong>Read the court's full opinion from the famous Biz Markie copyright case:</strong>
+          <br>
+          Grand Upright Music, Ltd. v. Warner Bros. Records Inc. (1991)
         </div>
-        <svg class="arrow" width="32" height="32" viewBox="0 0 32 32">
-          <polygon points="16,4 24,16 16,28 8,16" fill="#ffb347"/>
-        </svg>
-        <div class="more" style="white-space: pre-line; max-height: 65vh; overflow-y: auto; font-size:0.99em;">
-“Thou shalt not steal.” 1 has been an admonition followed since the dawn of civilization. Unfortunately, in the modern world of business this admonition is not always followed. Indeed, the defendants in this action for copyright infringement would have this court believe that stealing is rampant in the music business and, for that reason, their conduct here should be excused. The conduct of the defendants herein, however, violates not only the Seventh Commandment, but also the copyright laws of this country.
-
-[1] This proceeding was instituted by Order To Show Cause to obtain a preliminary injunction against the defendants for the improper and unlicensed use of a composition “Alone Again (Naturally)” written and performed on records by Raymond “Gilbert” O’Sullivan. Defendants admit “that the Biz Markie album ‘I Need A Haircut’ embodies the rap recording ‘Alone Again’ which uses three words from ‘Alone Again (Naturally)’ composed by Gilbert O’Sullivan and a portion of the music taken from the O’Sullivan recording.” Defendants’ Post-Hearing Memorandum at 2. The only issue, therefore, seems to be who owns the copyright to the song “Alone Again (Naturally)” and the master recording thereof made by Gilbert O’Sullivan.
-
-Three categories of proof lead me to the conclusion that the plaintiff is the true owner of these copyrights: (1) copies of the original copyrights made out to NAM Music, Inc., along with a deed vesting title to the copyrights in Gilbert O’Sullivan and another deed transferring the copyrights to the plaintiff corporation; and (2) the testimony of Gilbert O’Sullivan the acknowledged writer of the composition “Alone Again (Naturally)” and the performer who is featured on the master recording pirated by the defendants; and (3) the defendants’ actions both before and after the issuance of the defendant album in contacting Gilbert O’Sullivan and his brother/agent in an attempt to obtain a license to use the copyrighted material.
-
-[2] Defense counsel objected to the admission of copies of the certificates of copyright because they were not “authenticated.” It was apparent that defense counsel was not using this term “authenticate” in the sense that it is normally used in the law, particularly in the law of evidence. Since the original copyright was in the name of NAM Music, Inc., defense counsel seemed to argue that someone authorized by NAM Music, Inc. would have to identify the certificates in order to “authenticate” them.
-
-Of course, the reader should be aware that NAM Music, Inc. had long been dissolved, as defense counsel knew. It was clear to me that the use of the word “authenticate” by defense counsel had nothing whatsoever to do with self-authentication of public records under Rule 902 of the Federal Rules of Evidence. Nor did counsel believe that the certificate was anything less than a true and complete copy of the public record.
-
-[3] Counsel for the defendants also attempted to keep out evidence of the transfer to the plaintiff of copyrights in the work at issue. Defense counsel did not conduct any discovery in the time between the institution of this lawsuit and the hearing on the preliminary injunction and claimed to be surprised when the plaintiff produced documentation of the transfer. However, that defense counsel did not adequately prepare for this hearing does not give the court cause to reject evidence of the transfer.
-
-Defense counsel also objected to the admission of the transfer documents on the grounds that, since they had not been filed with the Registrar of Copyrights, they were without legal effect. This is not the law and the specific section upon which the defense counsel relied has long been repealed. These documents, taken together, prove valid copyrights vested in the plaintiff.
-
-In addition to the documents offered into evidence by the plaintiff, Gilbert O’Sullivan — who the defendants acknowledge was the composer, lyricist and first performer of the piece at issue — testified that plaintiff is the owner of the copyright. There can be no one more interested in the question of valid copyright than a person in Gilbert O’Sullivan’s position and he was a thoroughly credible and believable witness. Defense counsel did not effectively controvert O’Sullivan’s testimony in any way. Indeed, the thrust of the cross-examination of O’Sullivan went to the artist’s motive for refusing to give the defendants a license to use the song.
-
-However, the most persuasive evidence that the copyrights are valid and owned by the plaintiff comes from the actions and admissions of the defendants. Prior to the time that Biz Markie’s album was released, the various defendants apparently discussed among themselves the need to obtain a license. They decided to contact O’Sullivan and wrote to his brother/agent, enclosing a copy of the tape. In this letter, an attorney for the defendant states:
-
-This firm represents a recording artist professionally known as Biz Markie, who has recorded a composition for Cold Chillin’ Records entitled “Alone Again” which incorporates portions of the composition entitled “Alone Again Naturally” originally recorded by Gilbert O’Sullivan (the “Original Composition”).
-
-Biz Markie would like to obtain your consent to the use of the “Original Composition.”
-
-In writing this letter, counsel for Biz Markie admittedly was seeking “terms” for the use of the material. One would not agree to pay to use the material of another unless there was a valid copyright! What more persuasive evidence can there be!
-
-Each defendant who testified knew that it is necessary to obtain a license — sometimes called a “clearance” — from the holder of a valid copyright before using the copyrighted work in another piece. Warner Bros. Records, Inc. had a department set up specifically to obtain such clearances. Brown Deposition of 11/19/91 at 30 et seq.; Tillman Deposition of 11/22/91 at 7. WEA International, Inc. knew it had to obtain “consents, permissions or clearances. . . .” Rossi Deposition of 11/22/91 at 10-11. /Cold Chillin’ Records, Inc. knew that such clearances were necessary. Fitchelberg Deposition of 11/21/91 at 34 et seq.
-
-Clearly, the attorneys representing Biz Markie and acting on his behalf also knew of this obligation. Biz Markie’s attorneys sent copies of an August 16 letter, addressed to counsel for Cold Chillin’ Records, Inc., to the other defendants. That letter contains the following:
-
-In light of the fact that Cold Chillin’ knew that other sample clearance requests were pending at that time, it follows that Cold Chillin’ should have known that similar denials of permission by rightsholders of other samples used on the album and single might be forthcoming, for which similar action would have been appropriate. Nevertheless, instead of continuing to communicate with our client and us and otherwise cooperating to ensure that all rights were secured prior to release of the album and single, as it did in the situation involving the Eagles samples, Cold Chillin’ unilaterally elected to release the album and single, perhaps with the thought that it would look to Biz for resolution of any problems relating to sampling rights, or the failure to secure such rights, that may arise in the future.
-
-Consequently, if any legal action arises in connection with the samples in question, such action will not arise due to the fact that Biz used the samples in his recorded compositions, but rather, due to the fact that Cold Chillin’ released such material prior to the appropriate consents being secured in connection with such samples.
-
-[4] From all of the evidence produced in the hearing, it is clear that the defendants knew that they were violating the plaintiff’s rights as well as the rights of others. Their only aim was to sell thousands upon thousands of records. 2 This callous disregard for the law and for the rights of others requires not only the preliminary injunction sought by the plaintiff but also sterner measures.
-
-The application for the preliminary injunction is granted. The plaintiff is to submit within five (5) days hereof an appropriate decree. This matter is respectfully referred to the United States Attorney for the Southern District of New York for consideration of prosecution of these defendants under 17 U.S.C. § 506(a) and 18 U.S.C. § 2319.
-        </div>
+        <a href="https://law.justia.com/cases/federal/district-courts/FSupp/780/182/1445286/" target="_blank" rel="noopener">
+          Read the Court Opinion
+        </a>
       </div>
     </section>
 
@@ -575,7 +582,7 @@ The application for the preliminary injunction is granted. The plaintiff is to s
           </li>
           <li>
             "Grand Upright Music, Ltd. v. Warner Bros. Records Inc., 780 F. Supp. 182 (S.D.N.Y. 1991)". Court opinion and order. 
-            <a href="https://law.justia.com/cases/federal/district-courts/FSupp/780/182/1468936/" target="_blank">[Full text]</a>
+            <a href="https://law.justia.com/cases/federal/district-courts/FSupp/780/182/1445286/" target="_blank">[Full text]</a>
           </li>
         </ul>
         <strong>Secondary Sources:</strong>
@@ -657,6 +664,7 @@ The application for the preliminary injunction is granted. The plaintiff is to s
     });
 
     // --- Drag to scroll for timeline images ---
+    const scrollTimelineContainer = document.querySelector('.scroll-timeline-container');
     const scrollTimeline = document.getElementById('scrollTimeline');
     let isDown = false;
     let startX;
@@ -665,7 +673,7 @@ The application for the preliminary injunction is granted. The plaintiff is to s
       isDown = true;
       scrollTimeline.classList.add('active');
       startX = e.pageX - scrollTimeline.offsetLeft;
-      scrollLeft = scrollTimeline.scrollLeft;
+      scrollLeft = scrollTimelineContainer.scrollLeft;
     });
     scrollTimeline.addEventListener('mouseleave', () => {
       isDown = false;
@@ -679,14 +687,14 @@ The application for the preliminary injunction is granted. The plaintiff is to s
       if (!isDown) return;
       e.preventDefault();
       const x = e.pageX - scrollTimeline.offsetLeft;
-      const walk = (x - startX) * 1.35; //scroll-fast
-      scrollTimeline.scrollLeft = scrollLeft - walk;
+      const walk = (x - startX) * 1.35;
+      scrollTimelineContainer.scrollLeft = scrollLeft - walk;
     });
     // Touch events for mobile
     scrollTimeline.addEventListener('touchstart', (e) => {
       isDown = true;
       startX = e.touches[0].pageX - scrollTimeline.offsetLeft;
-      scrollLeft = scrollTimeline.scrollLeft;
+      scrollLeft = scrollTimelineContainer.scrollLeft;
     });
     scrollTimeline.addEventListener('touchend', () => {
       isDown = false;
@@ -695,7 +703,7 @@ The application for the preliminary injunction is granted. The plaintiff is to s
       if (!isDown) return;
       const x = e.touches[0].pageX - scrollTimeline.offsetLeft;
       const walk = (x - startX) * 1.35;
-      scrollTimeline.scrollLeft = scrollLeft - walk;
+      scrollTimelineContainer.scrollLeft = scrollLeft - walk;
     });
 
     // --- Fun facts for footer ---
