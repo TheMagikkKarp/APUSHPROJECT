@@ -121,7 +121,7 @@
     .bubble {
       background: var(--bubble-bg);
       border-radius: 1.5em 1.5em 1.5em 0.5em;
-      padding: 2rem 2rem 1.5rem 2rem;
+      padding: 2rem 2rem 1.5em 2rem;
       box-shadow: 0 8px 32px #0008;
       position: relative;
       transition: transform 0.17s cubic-bezier(.4,2,.6,1), box-shadow 0.17s, background 0.18s;
@@ -311,46 +311,40 @@
       user-select: none;
       animation: fadeIn 1.5s;
     }
-    .sources {
-      margin: 2em auto 2em auto;
-      color: var(--secondary-text);
-      font-size: 0.98em;
-      max-width: 820px;
-      background: var(--timeline-bg);
-      border-radius: 0.8em;
-      padding: 1.1em 1.8em;
-      box-shadow: 0 2px 10px #0002;
+    .sources-bubble {
+      background: var(--bubble-bg);
+      border-left: 7px solid var(--accent-dark);
+      border-radius: 1.1em 1.1em 1.1em 0.5em;
+      margin: 2.5em auto 2em auto;
+      padding: 1.7em 2em 1.5em 2em;
+      box-shadow: 0 6px 24px #0008;
+      font-size: 1.07em;
+      max-width: 700px;
     }
-    .sources strong {
-      color: var(--accent-dark);
+    .sources-bubble ul {
+      margin: 0.8em 0 0 0.3em;
+      padding: 0;
+      list-style: none;
     }
-    .sources a {
+    .sources-bubble li {
+      margin-bottom: 0.9em;
+      line-height: 1.5;
+    }
+    .sources-bubble a {
       color: var(--accent);
       text-decoration: underline;
+      font-weight: 500;
+      word-break: break-all;
     }
-    .citation {
-      font-size: 0.98em;
-      color: #ffb347cc;
-      margin-top: 0.6em;
-      margin-bottom: 0.6em;
-      display: block;
+    .sources-bubble .label {
+      font-weight: bold;
+      color: var(--accent-dark);
     }
-    .primary {
-      font-style: italic;
-      color: #ffb347;
+    .sources-bubble .primary {
+      color: #ffd39b;
     }
-    .secondary {
+    .sources-bubble .secondary {
       color: #b2c6d2;
-    }
-    .reflection {
-      background: var(--bubble-hover);
-      border-radius: 1.2em;
-      padding: 1.3em 2em 1.3em 2em;
-      margin-top: 2em;
-      margin-bottom: 3em;
-      color: #ffe6c7;
-      font-size: 1.15em;
-      box-shadow: 0 4px 18px #0007;
     }
     .apush {
       background: var(--timeline-era-bg);
@@ -362,38 +356,15 @@
       font-size: 1.08em;
       box-shadow: 0 2px 12px #0006;
     }
-
-    .case-link-bubble {
-      background: var(--bubble-bg);
-      border-left: 7px solid var(--accent-dark);
-      border-radius: 1.1em 1.1em 1.1em 0.5em;
-      margin-bottom: 2.2em;
-      padding: 1.7em 2em 1.5em 2em;
-      box-shadow: 0 6px 24px #0008;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      max-width: 700px;
-    }
-    .case-link-bubble a {
-      background: var(--accent-dark);
-      color: #14212b;
-      font-weight: bold;
-      border-radius: 0.7em;
-      padding: 0.7em 1.4em;
-      margin-top: 1em;
-      font-size: 1.08em;
-      text-decoration: none;
-      transition: background 0.2s, color 0.2s;
-      box-shadow: 0 4px 12px #0007;
-      letter-spacing: 0.01em;
-      display: inline-block;
-    }
-    .case-link-bubble a:hover, .case-link-bubble a:focus {
-      background: #fff2e0;
-      color: var(--accent-dark);
-      box-shadow: 0 8px 24px #ffb34755;
-      text-decoration: underline;
+    .reflection {
+      background: var(--bubble-hover);
+      border-radius: 1.2em;
+      padding: 1.3em 2em 1.3em 2em;
+      margin-top: 2em;
+      margin-bottom: 3em;
+      color: #ffe6c7;
+      font-size: 1.15em;
+      box-shadow: 0 4px 18px #0007;
     }
   </style>
 </head>
@@ -530,20 +501,6 @@
     </section>
 
     <section>
-      <h2>Landmark Primary Source: Grand Upright Music v. Warner Bros. (1991)</h2>
-      <div class="case-link-bubble">
-        <div>
-          <strong>Read the court's full opinion from the famous Biz Markie copyright case:</strong>
-          <br>
-          Grand Upright Music, Ltd. v. Warner Bros. Records Inc. (1991)
-        </div>
-        <a href="https://law.justia.com/cases/federal/district-courts/FSupp/780/182/1445286/" target="_blank" rel="noopener">
-          Read the Court Opinion
-        </a>
-      </div>
-    </section>
-
-    <section>
       <h2>Connections to APUSH Themes & Periods</h2>
       <div class="apush">
         The history of the American music business connects to multiple APUSH themes and periods:
@@ -563,41 +520,27 @@
       </div>
     </section>
 
-    <section>
-      <h2>Primary & Secondary Sources</h2>
-      <div class="sources">
-        <strong>Primary Sources:</strong>
-        <ul>
-          <li>
-            "Radio broadcasting station in Canada, 1925." Photograph. Wikimedia Commons. 
-            <a href="https://commons.wikimedia.org/wiki/File:Radio_broadcasting_station_in_Canada_1925.jpg" target="_blank">[View]</a>
-          </li>
-          <li>
-            "Payola Hearings, U.S. House of Representatives, 1960." Congressional Record. 
-            <a href="https://web.archive.org/web/20120325021458/http://historymatters.gmu.edu/d/6544/" target="_blank">[Transcript]</a>
-          </li>
-          <li>
-            "Engineer Eero Frantsila beside Telefunken transmission equipment in Lahti radio station, 1930s." Photograph. Wikimedia Commons.
-            <a href="https://commons.wikimedia.org/wiki/File:Engineer_Eero_Frantsila_beside_Telefunken_transmission_equipment_in_Lahti_radio_station,_1930%27s..jpg" target="_blank">[View]</a>
-          </li>
-          <li>
-            "Grand Upright Music, Ltd. v. Warner Bros. Records Inc., 780 F. Supp. 182 (S.D.N.Y. 1991)". Court opinion and order. 
-            <a href="https://law.justia.com/cases/federal/district-courts/FSupp/780/182/1445286/" target="_blank">[Full text]</a>
-          </li>
-        </ul>
-        <strong>Secondary Sources:</strong>
-        <ul>
-          <li>
-            Songtrust. "A Brief History of the U.S. Music Industry." 
-            <a href="https://www.songtrust.com/resources/blog/history-of-the-u-s-music-industry" target="_blank">[Read]</a>
-          </li>
-          <li>
-            RIAA. "2023 Year-End Music Industry Revenue Report."
-            <a href="https://www.riaa.com/reports/2023-year-end-music-industry-revenue-report/" target="_blank">[Read]</a>
-          </li>
-        </ul>
-      </div>
-    </section>
+    <!-- Sources Bubble at the Bottom -->
+    <div class="sources-bubble">
+      <div class="label primary">Primary Sources</div>
+      <ul>
+        <li>
+          <a href="https://law.justia.com/cases/federal/district-courts/FSupp/780/182/1445286/" target="_blank">Grand Upright Music, Ltd. v. Warner Bros. Records Inc., 1991 (full court opinion)</a>
+        </li>
+        <li>
+          <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Engineer_Eero_Frantsila_beside_Telefunken_transmission_equipment_in_Lahti_radio_station%2C_1930%27s..jpg/640px-Engineer_Eero_Frantsila_beside_Telefunken_transmission_equipment_in_Lahti_radio_station%2C_1930%27s..jpg" target="_blank">Photograph: Engineer Eero Frantsila beside Telefunken transmitter, 1930s</a>
+        </li>
+      </ul>
+      <div class="label secondary" style="margin-top:1.2em;">Secondary Sources</div>
+      <ul>
+        <li>
+          <a href="https://www.playlistresearch.com/history/labels1900s.htm" target="_blank">Playlist Research: History of US Record Labels in the 1900s</a>
+        </li>
+        <li>
+          <a href="https://www.superprof.com/blog/music-history-timeline/" target="_blank">Superprof: Music History Timeline</a>
+        </li>
+      </ul>
+    </div>
   </main>
   <div class="footer-fact" id="footerFact">
     Did you know? <span id="randomFunFact"></span>
