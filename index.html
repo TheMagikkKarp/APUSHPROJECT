@@ -165,6 +165,9 @@
       margin-top: 0.3em;
       display: none;
       transition: color 0.17s;
+      white-space: pre-line;
+      max-height: 65vh;
+      overflow-y: auto;
     }
     .bubble.active .more {
       display: block;
@@ -192,14 +195,19 @@
 
     .scroll-timeline-container {
       margin: 3.5rem 0 4rem 0;
-      overflow-x: auto;
       width: 100vw;
       left: 50%;
       position: relative;
       right: 50%;
       transform: translateX(-50%);
       padding-bottom: 1.5rem;
+      /* Hide scroll bar for all browsers */
+      overflow-x: hidden;
+      -ms-overflow-style: none;  /* Internet Explorer 10+ */
+      scrollbar-width: none;  /* Firefox */
     }
+    .scroll-timeline-container::-webkit-scrollbar { display: none; }
+
     .scroll-timeline {
       display: flex;
       flex-direction: row;
@@ -211,6 +219,14 @@
       background: var(--timeline-bg);
       border-radius: 1.1em;
       box-shadow: 0 2px 18px #0004;
+      cursor: grab;
+      user-select: none;
+      /* Prevent text selection while dragging */
+      -webkit-user-select: none;
+      -ms-user-select: none;
+    }
+    .scroll-timeline:active {
+      cursor: grabbing;
     }
     .timeline-era {
       background: var(--timeline-era-bg);
@@ -411,61 +427,111 @@
     <section>
       <h2>Timeline: Key Eras in the Business & History of Popular Music</h2>
       <div class="timeline">
-        <div class="bubble" tabindex="0" data-era="1920s" data-more="Primary Source: 1925 photo of a radio broadcasting station in Canada (Wikimedia Commons)">
+        <div class="bubble" tabindex="0" data-era="1920s">
           <span class="era">1900s–1920s: Birth of the Industry—Jazz, Copyright & Radio</span>
           <div class="fact">
-            The 1920s marked the beginning of the modern music industry as record labels and radio networks gained national influence. The American Society of Composers, Authors, and Publishers (ASCAP) was created to collect royalties for songwriters as radio broadcasts soared. Early copyright battles between broadcasters and publishers set the legal foundations for modern intellectual property law. <span class="citation primary">Primary: "Radio broadcasting station in Canada, 1925" (Wikimedia Commons)</span><span class="citation secondary">Secondary: Songtrust, "History of the U.S. Music Industry"</span>
+            The 1920s marked the beginning of the modern music industry as record labels and radio networks gained national influence. The American Society of Composers, Authors, and Publishers (ASCAP) was created to collect royalties for songwriters as radio broadcasts soared. Early copyright battles between broadcasters and publishers set the legal foundations for modern intellectual property law.
           </div>
           <svg class="arrow" width="32" height="32" viewBox="0 0 32 32"><polygon points="16,4 24,16 16,28 8,16" fill="#ffb347"/></svg>
           <div class="more"></div>
         </div>
-        <div class="bubble" tabindex="0" data-era="1950s" data-more="Primary Source: U.S. Congressional hearings on payola, 1960 (House Committee on Legislative Oversight)">
+        <div class="bubble" tabindex="0" data-era="1950s">
           <span class="era">1950s: Record Labels, Payola, & Teen Consumers</span>
           <div class="fact">
-            In the 1950s, the music business flourished as rock ‘n’ roll captured the nation's youth. Major and independent labels competed for radio play and chart dominance. The “payola” scandal—revealed through Congressional investigation—exposed how record companies bribed DJs to promote their records. This not only changed law and policy, but also highlighted the growing economic power of youth and pop culture. <span class="citation primary">Primary: "Payola Hearings, U.S. House of Representatives, 1960" (Congressional Record)</span><span class="citation secondary">Secondary: NPR, "The Evolution of the Music Industry"</span>
+            In the 1950s, the music business flourished as rock ‘n’ roll captured the nation's youth. Major and independent labels competed for radio play and chart dominance. The “payola” scandal—revealed through Congressional investigation—exposed how record companies bribed DJs to promote their records. This not only changed law and policy, but also highlighted the growing economic power of youth and pop culture.
           </div>
           <svg class="arrow" width="32" height="32" viewBox="0 0 32 32"><polygon points="16,4 24,16 16,28 8,16" fill="#ffb347"/></svg>
           <div class="more"></div>
         </div>
-        <div class="bubble" tabindex="0" data-era="1960s" data-more="Primary Source: Motown Records contract, 1962 (Library of Congress)">
+        <div class="bubble" tabindex="0" data-era="1960s">
           <span class="era">1960s–1970s: Motown, Integration, & the Album Era</span>
           <div class="fact">
-            Motown Records, founded in Detroit, redefined American music and business by bringing Black artists into the mainstream. Its vertically integrated system controlled production, publishing, and promotion, serving as a model for later companies. The 1971 copyright law expanded protection to recordings, not just compositions, dramatically shifting profits toward labels. <span class="citation primary">Primary: "Motown Records Contract, 1962" (Library of Congress)</span><span class="citation secondary">Secondary: Wikipedia, "Music Industry"</span>
+            Motown Records, founded in Detroit, redefined American music and business by bringing Black artists into the mainstream. Its vertically integrated system controlled production, publishing, and promotion, serving as a model for later companies. The 1971 copyright law expanded protection to recordings, not just compositions, dramatically shifting profits toward labels.
           </div>
           <svg class="arrow" width="32" height="32" viewBox="0 0 32 32"><polygon points="16,4 24,16 16,28 8,16" fill="#ffb347"/></svg>
           <div class="more"></div>
         </div>
-        <div class="bubble" tabindex="0" data-era="1980s" data-more="Primary Source: MTV’s first broadcast, 1981 (MTV Archives)">
+        <div class="bubble" tabindex="0" data-era="1980s">
           <span class="era">1980s: MTV, Superstars, & Major Label Consolidation</span>
           <div class="fact">
-            With the launch of MTV, the music business entered a new era where visual branding was as important as sound. Major label mergers resulted in a handful of powerful corporations, and the CD brought huge profits. Music videos and global marketing made American artists into international icons, and merchandising and touring became bigger than ever before. <span class="citation primary">Primary: "MTV First Broadcast, 1981" (MTV Archives)</span>
+            With the launch of MTV, the music business entered a new era where visual branding was as important as sound. Major label mergers resulted in a handful of powerful corporations, and the CD brought huge profits. Music videos and global marketing made American artists into international icons, and merchandising and touring became bigger than ever before.
           </div>
           <svg class="arrow" width="32" height="32" viewBox="0 0 32 32"><polygon points="16,4 24,16 16,28 8,16" fill="#ffb347"/></svg>
           <div class="more"></div>
         </div>
-        <div class="bubble" tabindex="0" data-era="1990s" data-more="Primary Source: RIAA U.S. sales data, 1999 (RIAA.com)">
+        <div class="bubble" tabindex="0" data-era="1990s">
           <span class="era">1990s: CD Boom, Hip-Hop, & the Indie Revolution</span>
           <div class="fact">
-            The 1990s were the peak of the CD era, with record profits and a new wave of entrepreneurial artists and independent labels. Hip-hop rose from the margins to the mainstream, with business moguls like Russell Simmons and Sean “Diddy” Combs creating new models for music ownership. However, the industry’s resistance to digital innovation would soon lead to crisis. <span class="citation primary">Primary: "RIAA U.S. Sales Database, 1999" (RIAA.com)</span>
+            The 1990s were the peak of the CD era, with record profits and a new wave of entrepreneurial artists and independent labels. Hip-hop rose from the margins to the mainstream, with business moguls like Russell Simmons and Sean “Diddy” Combs creating new models for music ownership. However, the industry’s resistance to digital innovation would soon lead to crisis.
           </div>
           <svg class="arrow" width="32" height="32" viewBox="0 0 32 32"><polygon points="16,4 24,16 16,28 8,16" fill="#ffb347"/></svg>
           <div class="more"></div>
         </div>
-        <div class="bubble" tabindex="0" data-era="2000s" data-more="Secondary Source: Rolling Stone, 'The Music Industry's Digital Revolution', 2015">
+        <div class="bubble" tabindex="0" data-era="2000s">
           <span class="era">2000s: Digital Disruption, Lawsuits, & New Models</span>
           <div class="fact">
-            Digital piracy and file sharing in the early 2000s upended the business, causing CD sales to plummet and leading to lawsuits against users and tech companies. The launch of Apple’s iTunes Store provided a legal digital option, but at lower profits. The business adapted with “360 deals” and new forms of revenue, but the era marked the end of the old model. <span class="citation secondary">Secondary: Rolling Stone, "The Music Industry's Digital Revolution"</span>
+            Digital piracy and file sharing in the early 2000s upended the business, causing CD sales to plummet and leading to lawsuits against users and tech companies. The launch of Apple’s iTunes Store provided a legal digital option, but at lower profits. The business adapted with “360 deals” and new forms of revenue, but the era marked the end of the old model.
           </div>
           <svg class="arrow" width="32" height="32" viewBox="0 0 32 32"><polygon points="16,4 24,16 16,28 8,16" fill="#ffb347"/></svg>
           <div class="more"></div>
         </div>
-        <div class="bubble" tabindex="0" data-era="2010s" data-more="Secondary Source: RIAA, '2023 Year-End Music Industry Revenue Report'">
+        <div class="bubble" tabindex="0" data-era="2010s">
           <span class="era">2010s–Now: Streaming, Social Media, & a New Industry</span>
           <div class="fact">
-            Streaming platforms like Spotify and Apple Music now account for the vast majority of music revenue, fundamentally changing how profits are distributed. While the “Big Three” labels remain powerful, independent artists have new ways to reach audiences. Ongoing debates about fair compensation and copyright reflect the continuing evolution of the music business. <span class="citation secondary">Secondary: RIAA, "2023 Year-End Music Industry Revenue Report"</span>
+            Streaming platforms like Spotify and Apple Music now account for the vast majority of music revenue, fundamentally changing how profits are distributed. While the “Big Three” labels remain powerful, independent artists have new ways to reach audiences. Ongoing debates about fair compensation and copyright reflect the continuing evolution of the music business.
           </div>
           <svg class="arrow" width="32" height="32" viewBox="0 0 32 32"><polygon points="16,4 24,16 16,28 8,16" fill="#ffb347"/></svg>
           <div class="more"></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Landmark Primary Source: Grand Upright Music v. Warner Bros. (1991)</h2>
+      <div class="bubble" tabindex="0" id="expandable-bizmarkie">
+        <span class="era">Grand Upright Music, Ltd. v. Warner Bros. Records Inc. (1991)</span>
+        <div class="fact">
+          <em>Click to expand and read a key excerpt from the court's opinion in the famous Biz Markie copyright case:</em>
+        </div>
+        <svg class="arrow" width="32" height="32" viewBox="0 0 32 32">
+          <polygon points="16,4 24,16 16,28 8,16" fill="#ffb347"/>
+        </svg>
+        <div class="more" style="white-space: pre-line; max-height: 65vh; overflow-y: auto; font-size:0.99em;">
+“Thou shalt not steal.” 1 has been an admonition followed since the dawn of civilization. Unfortunately, in the modern world of business this admonition is not always followed. Indeed, the defendants in this action for copyright infringement would have this court believe that stealing is rampant in the music business and, for that reason, their conduct here should be excused. The conduct of the defendants herein, however, violates not only the Seventh Commandment, but also the copyright laws of this country.
+
+[1] This proceeding was instituted by Order To Show Cause to obtain a preliminary injunction against the defendants for the improper and unlicensed use of a composition “Alone Again (Naturally)” written and performed on records by Raymond “Gilbert” O’Sullivan. Defendants admit “that the Biz Markie album ‘I Need A Haircut’ embodies the rap recording ‘Alone Again’ which uses three words from ‘Alone Again (Naturally)’ composed by Gilbert O’Sullivan and a portion of the music taken from the O’Sullivan recording.” Defendants’ Post-Hearing Memorandum at 2. The only issue, therefore, seems to be who owns the copyright to the song “Alone Again (Naturally)” and the master recording thereof made by Gilbert O’Sullivan.
+
+Three categories of proof lead me to the conclusion that the plaintiff is the true owner of these copyrights: (1) copies of the original copyrights made out to NAM Music, Inc., along with a deed vesting title to the copyrights in Gilbert O’Sullivan and another deed transferring the copyrights to the plaintiff corporation; and (2) the testimony of Gilbert O’Sullivan the acknowledged writer of the composition “Alone Again (Naturally)” and the performer who is featured on the master recording pirated by the defendants; and (3) the defendants’ actions both before and after the issuance of the defendant album in contacting Gilbert O’Sullivan and his brother/agent in an attempt to obtain a license to use the copyrighted material.
+
+[2] Defense counsel objected to the admission of copies of the certificates of copyright because they were not “authenticated.” It was apparent that defense counsel was not using this term “authenticate” in the sense that it is normally used in the law, particularly in the law of evidence. Since the original copyright was in the name of NAM Music, Inc., defense counsel seemed to argue that someone authorized by NAM Music, Inc. would have to identify the certificates in order to “authenticate” them.
+
+Of course, the reader should be aware that NAM Music, Inc. had long been dissolved, as defense counsel knew. It was clear to me that the use of the word “authenticate” by defense counsel had nothing whatsoever to do with self-authentication of public records under Rule 902 of the Federal Rules of Evidence. Nor did counsel believe that the certificate was anything less than a true and complete copy of the public record.
+
+[3] Counsel for the defendants also attempted to keep out evidence of the transfer to the plaintiff of copyrights in the work at issue. Defense counsel did not conduct any discovery in the time between the institution of this lawsuit and the hearing on the preliminary injunction and claimed to be surprised when the plaintiff produced documentation of the transfer. However, that defense counsel did not adequately prepare for this hearing does not give the court cause to reject evidence of the transfer.
+
+Defense counsel also objected to the admission of the transfer documents on the grounds that, since they had not been filed with the Registrar of Copyrights, they were without legal effect. This is not the law and the specific section upon which the defense counsel relied has long been repealed. These documents, taken together, prove valid copyrights vested in the plaintiff.
+
+In addition to the documents offered into evidence by the plaintiff, Gilbert O’Sullivan — who the defendants acknowledge was the composer, lyricist and first performer of the piece at issue — testified that plaintiff is the owner of the copyright. There can be no one more interested in the question of valid copyright than a person in Gilbert O’Sullivan’s position and he was a thoroughly credible and believable witness. Defense counsel did not effectively controvert O’Sullivan’s testimony in any way. Indeed, the thrust of the cross-examination of O’Sullivan went to the artist’s motive for refusing to give the defendants a license to use the song.
+
+However, the most persuasive evidence that the copyrights are valid and owned by the plaintiff comes from the actions and admissions of the defendants. Prior to the time that Biz Markie’s album was released, the various defendants apparently discussed among themselves the need to obtain a license. They decided to contact O’Sullivan and wrote to his brother/agent, enclosing a copy of the tape. In this letter, an attorney for the defendant states:
+
+This firm represents a recording artist professionally known as Biz Markie, who has recorded a composition for Cold Chillin’ Records entitled “Alone Again” which incorporates portions of the composition entitled “Alone Again Naturally” originally recorded by Gilbert O’Sullivan (the “Original Composition”).
+
+Biz Markie would like to obtain your consent to the use of the “Original Composition.”
+
+In writing this letter, counsel for Biz Markie admittedly was seeking “terms” for the use of the material. One would not agree to pay to use the material of another unless there was a valid copyright! What more persuasive evidence can there be!
+
+Each defendant who testified knew that it is necessary to obtain a license — sometimes called a “clearance” — from the holder of a valid copyright before using the copyrighted work in another piece. Warner Bros. Records, Inc. had a department set up specifically to obtain such clearances. Brown Deposition of 11/19/91 at 30 et seq.; Tillman Deposition of 11/22/91 at 7. WEA International, Inc. knew it had to obtain “consents, permissions or clearances. . . .” Rossi Deposition of 11/22/91 at 10-11. /Cold Chillin’ Records, Inc. knew that such clearances were necessary. Fitchelberg Deposition of 11/21/91 at 34 et seq.
+
+Clearly, the attorneys representing Biz Markie and acting on his behalf also knew of this obligation. Biz Markie’s attorneys sent copies of an August 16 letter, addressed to counsel for Cold Chillin’ Records, Inc., to the other defendants. That letter contains the following:
+
+In light of the fact that Cold Chillin’ knew that other sample clearance requests were pending at that time, it follows that Cold Chillin’ should have known that similar denials of permission by rightsholders of other samples used on the album and single might be forthcoming, for which similar action would have been appropriate. Nevertheless, instead of continuing to communicate with our client and us and otherwise cooperating to ensure that all rights were secured prior to release of the album and single, as it did in the situation involving the Eagles samples, Cold Chillin’ unilaterally elected to release the album and single, perhaps with the thought that it would look to Biz for resolution of any problems relating to sampling rights, or the failure to secure such rights, that may arise in the future.
+
+Consequently, if any legal action arises in connection with the samples in question, such action will not arise due to the fact that Biz used the samples in his recorded compositions, but rather, due to the fact that Cold Chillin’ released such material prior to the appropriate consents being secured in connection with such samples.
+
+[4] From all of the evidence produced in the hearing, it is clear that the defendants knew that they were violating the plaintiff’s rights as well as the rights of others. Their only aim was to sell thousands upon thousands of records. 2 This callous disregard for the law and for the rights of others requires not only the preliminary injunction sought by the plaintiff but also sterner measures.
+
+The application for the preliminary injunction is granted. The plaintiff is to submit within five (5) days hereof an appropriate decree. This matter is respectfully referred to the United States Attorney for the Southern District of New York for consideration of prosecution of these defendants under 17 U.S.C. § 506(a) and 18 U.S.C. § 2319.
         </div>
       </div>
     </section>
@@ -507,6 +573,10 @@
             "Engineer Eero Frantsila beside Telefunken transmission equipment in Lahti radio station, 1930s." Photograph. Wikimedia Commons.
             <a href="https://commons.wikimedia.org/wiki/File:Engineer_Eero_Frantsila_beside_Telefunken_transmission_equipment_in_Lahti_radio_station,_1930%27s..jpg" target="_blank">[View]</a>
           </li>
+          <li>
+            "Grand Upright Music, Ltd. v. Warner Bros. Records Inc., 780 F. Supp. 182 (S.D.N.Y. 1991)". Court opinion and order. 
+            <a href="https://law.justia.com/cases/federal/district-courts/FSupp/780/182/1468936/" target="_blank">[Full text]</a>
+          </li>
         </ul>
         <strong>Secondary Sources:</strong>
         <ul>
@@ -544,13 +614,17 @@
         bubble.classList.remove('active');
         bubble.querySelector('.more').textContent = '';
       });
-      bubble.addEventListener('click', () => {
+      bubble.addEventListener('click', function(e) {
         let opened = bubble.classList.toggle('active');
-        bubble.querySelector('.more').textContent = opened ? bubble.getAttribute('data-more') : '';
+        if (opened) {
+          bubble.querySelector('.more').textContent = bubble.getAttribute('data-more') || bubble.querySelector('.more').textContent;
+        } else {
+          bubble.querySelector('.more').textContent = '';
+        }
         document.querySelectorAll('.bubble').forEach(other => {
           if (other !== bubble) {
             other.classList.remove('active');
-            other.querySelector('.more').textContent = '';
+            if (other.querySelector('.more')) other.querySelector('.more').textContent = '';
           }
         });
       });
@@ -580,6 +654,48 @@
           card.click();
         }
       });
+    });
+
+    // --- Drag to scroll for timeline images ---
+    const scrollTimeline = document.getElementById('scrollTimeline');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    scrollTimeline.addEventListener('mousedown', (e) => {
+      isDown = true;
+      scrollTimeline.classList.add('active');
+      startX = e.pageX - scrollTimeline.offsetLeft;
+      scrollLeft = scrollTimeline.scrollLeft;
+    });
+    scrollTimeline.addEventListener('mouseleave', () => {
+      isDown = false;
+      scrollTimeline.classList.remove('active');
+    });
+    scrollTimeline.addEventListener('mouseup', () => {
+      isDown = false;
+      scrollTimeline.classList.remove('active');
+    });
+    scrollTimeline.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - scrollTimeline.offsetLeft;
+      const walk = (x - startX) * 1.35; //scroll-fast
+      scrollTimeline.scrollLeft = scrollLeft - walk;
+    });
+    // Touch events for mobile
+    scrollTimeline.addEventListener('touchstart', (e) => {
+      isDown = true;
+      startX = e.touches[0].pageX - scrollTimeline.offsetLeft;
+      scrollLeft = scrollTimeline.scrollLeft;
+    });
+    scrollTimeline.addEventListener('touchend', () => {
+      isDown = false;
+    });
+    scrollTimeline.addEventListener('touchmove', (e) => {
+      if (!isDown) return;
+      const x = e.touches[0].pageX - scrollTimeline.offsetLeft;
+      const walk = (x - startX) * 1.35;
+      scrollTimeline.scrollLeft = scrollLeft - walk;
     });
 
     // --- Fun facts for footer ---
