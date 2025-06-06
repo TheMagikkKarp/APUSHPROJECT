@@ -86,18 +86,27 @@
     .summary strong {
       color: var(--accent);
     }
+
+    .main-image-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5em;
+      justify-content: center;
+      align-items: flex-start;
+      margin: 2em 0 2.5em 0;
+      width: 100%;
+    }
     .main-image-container {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin: 2em 0 2.5em 0;
       background: var(--bubble-bg);
       border-radius: 1.1em;
       box-shadow: 0 4px 18px #0007;
       padding: 1.2em 1em 1.6em 1em;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
+      max-width: 340px;
+      min-width: 260px;
+      flex: 1 1 290px;
     }
     .main-image-container img {
       max-width: 100%;
@@ -112,6 +121,42 @@
       text-align: center;
       margin-top: 0;
     }
+    .court-image-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: var(--bubble-bg);
+      border-radius: 1.1em;
+      box-shadow: 0 4px 18px #0007;
+      padding: 1.2em 1em 1.6em 1em;
+      max-width: 340px;
+      min-width: 260px;
+      flex: 1 1 290px;
+    }
+    .court-image-link {
+      display: block;
+      text-align: center;
+      cursor: pointer;
+    }
+    .court-image-link img {
+      max-width: 100%;
+      border-radius: 0.7em;
+      box-shadow: 0 2px 16px #000c;
+      margin-bottom: 0.7em;
+      transition: box-shadow 0.2s, filter 0.2s;
+    }
+    .court-image-link:hover img, .court-image-link:focus img {
+      filter: brightness(1.07) contrast(1.1) drop-shadow(0 0 12px #ffb34788);
+      box-shadow: 0 6px 28px #ffb34755;
+    }
+    .court-image-caption {
+      color: #ffd39b;
+      font-size: 0.98em;
+      text-align: center;
+      margin-top: 0;
+      font-style: italic;
+    }
+
     .timeline {
       display: flex;
       flex-direction: column;
@@ -121,7 +166,7 @@
     .bubble {
       background: var(--bubble-bg);
       border-radius: 1.5em 1.5em 1.5em 0.5em;
-      padding: 2rem 2rem 1.5em 2rem;
+      padding: 2rem 2rem 1.5rem 2rem;
       box-shadow: 0 8px 32px #0008;
       position: relative;
       transition: transform 0.17s cubic-bezier(.4,2,.6,1), box-shadow 0.17s, background 0.18s;
@@ -285,6 +330,16 @@
       color: var(--secondary-text);
       opacity: 0.88;
     }
+    @media (max-width: 900px) {
+      .main-image-row {
+        flex-direction: column;
+        gap: 1.3em;
+        align-items: center;
+      }
+      .main-image-container, .court-image-container {
+        max-width: 100%;
+      }
+    }
     @media (max-width: 650px) {
       .scroll-timeline { min-width: 600px; }
       .timeline-era { min-width: 110px; max-width: 130px; font-size: 0.89em; }
@@ -362,7 +417,7 @@
       padding: 1.3em 2em 1.3em 2em;
       margin-top: 2em;
       margin-bottom: 3em;
-      color: #ffe6c7;
+      color: var(--primary-text); /* Changed to match primary text color */
       font-size: 1.15em;
       box-shadow: 0 4px 18px #0007;
     }
@@ -375,12 +430,23 @@
       Discover how American music—and the business behind it—has shaped and reflected our nation’s history, culture, and economy.
     </p>
   </header>
-  <!-- Main illustrative image -->
-  <div class="main-image-container">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Engineer_Eero_Frantsila_beside_Telefunken_transmission_equipment_in_Lahti_radio_station%2C_1930%27s..jpg/640px-Engineer_Eero_Frantsila_beside_Telefunken_transmission_equipment_in_Lahti_radio_station%2C_1930%27s..jpg" 
-         alt="Engineer Eero Frantsila beside Telefunken transmission equipment in Lahti radio station, 1930s">
-    <div class="main-image-caption">
-      Engineer Eero Frantsila beside Telefunken transmission equipment in Lahti radio station, 1930s. (<a style="color:#ffd39b" href="https://commons.wikimedia.org/wiki/File:Engineer_Eero_Frantsila_beside_Telefunken_transmission_equipment_in_Lahti_radio_station,_1930%27s..jpg" target="_blank">Wikimedia Commons</a>)
+  <!-- Main images row -->
+  <div class="main-image-row">
+    <div class="main-image-container">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Engineer_Eero_Frantsila_beside_Telefunken_transmission_equipment_in_Lahti_radio_station%2C_1930%27s..jpg/640px-Engineer_Eero_Frantsila_beside_Telefunken_transmission_equipment_in_Lahti_radio_station%2C_1930%27s..jpg" 
+           alt="Engineer Eero Frantsila beside Telefunken transmission equipment in Lahti radio station, 1930s">
+      <div class="main-image-caption">
+        Engineer Eero Frantsila beside Telefunken transmission equipment in Lahti radio station, 1930s. (<a style="color:#ffd39b" href="https://commons.wikimedia.org/wiki/File:Engineer_Eero_Frantsila_beside_Telefunken_transmission_equipment_in_Lahti_radio_station,_1930%27s..jpg" target="_blank">Wikimedia Commons</a>)
+      </div>
+    </div>
+    <div class="court-image-container">
+      <a class="court-image-link" href="https://law.justia.com/cases/federal/district-courts/FSupp/780/182/1445286/" target="_blank">
+        <img src="https://e-typist.com/wp-content/uploads/2022/10/transcript-min-1000x675.jpg"
+          alt="Transcript court case" />
+      </a>
+      <div class="court-image-caption">
+        Click this image to view the court case
+      </div>
     </div>
   </div>
   <!-- Scrollable Timeline -->
